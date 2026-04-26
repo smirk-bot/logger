@@ -21,15 +21,7 @@ function getTimeStamp(timestamp){
   let dateTime = new Date(timestamp)
   return dateTime.toLocaleString('en-US', { timeZone: 'Etc/GMT+5', hour12: false })
 }
-function getContent(content){
-  try{
-    if(logLevel === 1) return content
-    if(content?.message) return content.message
-    return content
-  }catch(e){
-    return content
-  }
-}
+
 function setLevel(level = Level.INFO) {
   if (LevelMap.hasOwnProperty(level)) {
     logLevel = LevelMap[level];
